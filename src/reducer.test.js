@@ -75,4 +75,16 @@ describe('reducer', () => {
         })
 
     })
-})
+
+    describe('generateAuralUpdate', () => {
+        //let guesses = [10, 40, 70]
+        //let feedback = "You're Warm"
+        it('Should give feedback at the beginning of game', () => {
+            let state;
+            state = reducer(state, generateAuralUpdate());
+            expect(state.auralStatus).toEqual(
+                "Here's the status of the game right now: Make your guess! You've made 0 guesses."
+            )
+        });
+    });
+});
